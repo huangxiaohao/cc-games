@@ -9,10 +9,10 @@ export default function Home() {
     <div className={styles.page}>
       <img src={bgHome} alt="cc-games" className={styles.img} />
 
-      {/* 点击热区 - 位置参数按设计稿换算成 rem 填进来 */}
+      {/* 点击热区 - 智绘新章入口 */}
       <div
-        className={styles.hotArea}
-        onClick={() => navigate('/template')}
+        className={styles.hotArea1}
+        onClick={() => navigate('/smartDraw')}
       />
     </div>
   );
