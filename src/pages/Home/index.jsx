@@ -13,17 +13,17 @@ export default function Home() {
       {/* 点击热区 - 智绘新章入口 */}
       <div className={styles.hotArea1} onClick={() => navigate("/smartDraw")} />
 
-      {/* 点击热区2 */}
+      {/* 点击热区2 - 乐启新程 */}
       <div className={styles.hotArea2} onClick={() => alert("点击热区2")} />
 
-      {/* 点击热区3 */}
+      {/* 点击热区3 - 运动汇*/}
       <div className={styles.hotArea3} onClick={() => alert("点击热区3")} />
 
-      {/* 点击热区4 */}
-      <div className={styles.hotArea4} onClick={() => alert("点击热区4")} />
+      {/* 点击热区4 - 积分排名 */}
+      <div className={styles.hotArea4} onClick={() => navigate("/point-rank")} />
 
-      {/* 点击热区5 */}
-      <div className={styles.hotArea5} onClick={() => alert("点击热区5")} />
+      {/* 点击热区5 - 庆典直播 */}
+      <div className={styles.hotArea5} onClick={() => navigate("/celebration-live")} />
     </div>
   );
 }

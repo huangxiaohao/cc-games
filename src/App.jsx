@@ -7,6 +7,8 @@ import SmartDraw from './pages/smartDraw';
 import WarmService from './pages/smartDraw/WarmService';
 import BoilingVitality from './pages/smartDraw/BoilingVitality';
 import AIVoice from './pages/smartDraw/AIVoice';
+import PointRank from './pages/pointRank';
+import CelebrationLive from './pages/celebrationLive';
 import Template from './pages/Template';
 import VideoSplash from './pages/VideoSplash';
 
@@ -38,6 +40,8 @@ function AppRoutes() {
       <Route path="/smartDraw/boiling-vitality" element={<BoilingVitality />} />
       <Route path="/smartDraw/ai-voice" element={<AIVoice />} />
       <Route path="/template" element={<Template />} />
+      <Route path="/point-rank" element={<PointRank />} />
+      <Route path="/celebration-live" element={<CelebrationLive />} />
     </Routes>
   );
 }
