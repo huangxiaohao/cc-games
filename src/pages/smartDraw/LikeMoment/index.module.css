@@ -11,11 +11,3 @@
   display: block;
 }
 
-.backArea {
-  position: absolute;
-  top: 1%;
-  left: 5%;
-  width: 15%;
-  height: 4%;
-  cursor: pointer;
-}

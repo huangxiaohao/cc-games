@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './index.module.css';
+import BackButton from '../../components/BackButton';
 import bgSmartDraw from "../../assets/smartDraw/01.png";
 
 export default function SmartDraw() {
@@ -10,7 +11,7 @@ export default function SmartDraw() {
       <img src={bgSmartDraw} alt="智绘新章" className={styles.img} />
 
       {/* 返回首页 */}
-      <div className={styles.backArea} onClick={() => navigate('/home')} />
+      <BackButton top={1} left={5} width={15} height={5} unit="%" onClick={() => navigate('/home')} />
 
       {/* 让服务升温 */}
       <div className={styles.hotArea1} onClick={() => navigate('/smartDraw/warm-service')} />

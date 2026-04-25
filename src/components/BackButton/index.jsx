@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './index.module.css';
 
-export default function BackButton({ top = 4, left = 2, width = 8, height = 8 }) {
+export default function BackButton({ top = 4, left = 2, width = 8, height = 8, unit = 'rem', onClick }) {
   const navigate = useNavigate();
   return (
     <div
       className={styles.btn}
-      style={{ top: `${top}rem`, left: `${left}rem`, width: `${width}rem`, height: `${height}rem` }}
-      onClick={() => navigate(-1)}
+      style={{ top: `${top}${unit}`, left: `${left}${unit}`, width: `${width}${unit}`, height: `${height}${unit}` }}
+      onClick={onClick || (() => navigate(-1))}
     />
   );
 }
