@@ -2,11 +2,24 @@
   width: 100%;
   min-height: 100vh;
   background: #000;
+  position: relative;
 }
 
 .img {
   width: 100%;
-  height: 100vh;
-  object-fit: cover;
+  height: auto;
   display: block;
+}
+
+.hotArea {
+  position: absolute;
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  /* ===== 以下四个值按设计稿比例调整 ===== */
+    top: 33%;
+    left: 17%;
+    width: 66%;
+    height: 8%;
+  /* ================================= */
+  cursor: pointer;
 }
