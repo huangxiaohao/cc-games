@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+/* 开屏页 */
+
 // public 目录下的资源直接用 / 路径，不经过 Vite 模块解析
 const carVideo = '/car.mp4';
 

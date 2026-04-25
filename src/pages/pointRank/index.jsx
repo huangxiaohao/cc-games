@@ -2,6 +2,8 @@ import styles from './index.module.css';
 import pointRankImg from '../../assets/pointRank/01.png';
 import BackButton from '../../components/BackButton';
 
+/* 积分排名 */
+
 export default function PointRank() {
   return (
     <div className={styles.page}>

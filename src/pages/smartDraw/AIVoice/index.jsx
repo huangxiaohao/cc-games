@@ -3,6 +3,8 @@ import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
 import bgAIVoice from "../../../assets/smartDraw/01-03.png";
 
+/* AI好声音 */
+
 export default function AIVoice() {
   const navigate = useNavigate();
 

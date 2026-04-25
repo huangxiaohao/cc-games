@@ -2,6 +2,8 @@ import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
 import bgWarmService from "../../../assets/smartDraw/01-01.png";
 
+/* 暖心服务 */
+
 export default function WarmService() {
   return (
     <div className={styles.page}>

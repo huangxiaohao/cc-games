@@ -2,6 +2,8 @@ import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
 import bgGloryMoment from "../../../assets/smartDraw/01-03-01.png";
 
+/* 荣耀时刻 */
+
 export default function GloryMoment() {
   return (
     <div className={styles.page}>

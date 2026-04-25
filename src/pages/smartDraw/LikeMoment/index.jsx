@@ -2,6 +2,8 @@ import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
 import bgLikeMoment from "../../../assets/smartDraw/01-03-03.png";
 
+/* 点赞瞬间 */
+
 export default function LikeMoment() {
   return (
     <div className={styles.page}>

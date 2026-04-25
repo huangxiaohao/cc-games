@@ -36,17 +36,29 @@ function AppRoutes() {
 
   return (
     <Routes>
+      {/* 开屏页 */}
       <Route path="/" element={<VideoSplash />} />
+      {/* 首页 */}
       <Route path="/home" element={<Home />} />
+      {/* 智绘新章 */}
       <Route path="/smartDraw" element={<SmartDraw />} />
+      {/* 暖心服务 */}
       <Route path="/smartDraw/warm-service" element={<WarmService />} />
+      {/* 沸腾活力 */}
       <Route path="/smartDraw/boiling-vitality" element={<BoilingVitality />} />
+      {/* AI好声音 */}
       <Route path="/smartDraw/ai-voice" element={<AIVoice />} />
+      {/* 荣耀时刻 */}
       <Route path="/smartDraw/glory-moment" element={<GloryMoment />} />
+      {/* 贡献榜 */}
       <Route path="/smartDraw/contribution" element={<Contribution />} />
+      {/* 点赞瞬间 */}
       <Route path="/smartDraw/like-moment" element={<LikeMoment />} />
+      {/* 模板页 */}
       <Route path="/template" element={<Template />} />
+      {/* 积分排名 */}
       <Route path="/point-rank" element={<PointRank />} />
+      {/* 庆典直播 */}
       <Route path="/celebration-live" element={<CelebrationLive />} />
     </Routes>
   );

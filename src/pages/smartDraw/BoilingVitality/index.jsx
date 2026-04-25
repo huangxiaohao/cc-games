@@ -3,6 +3,8 @@ import BackButton from '../../../components/BackButton';
 import bgBoilingVitality from "../../../assets/smartDraw/01-02.png";
 import gifBoilingVitality from "../../../assets/smartDraw/01-02-01.gif";
 
+/* 沸腾活力 */
+
 export default function BoilingVitality() {
   return (
     <div className={styles.page}>

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import styles from './index.module.css';
 import bgHome from '../../assets/bg-home.png';
 
+/* 首页 */
+
 const TEXT = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
 
 export default function Home() {

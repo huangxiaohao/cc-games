@@ -3,6 +3,8 @@ import styles from './index.module.css';
 import BackButton from '../../components/BackButton';
 import bgSmartDraw from "../../assets/smartDraw/01.png";
 
+/* 智绘新章 */
+
 export default function SmartDraw() {
   const navigate = useNavigate();
 

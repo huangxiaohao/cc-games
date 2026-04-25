@@ -5,6 +5,8 @@ import BackButton from '../../components/BackButton';
 import MediaViewer from '../../components/MediaViewer';
 import { useMediaViewer } from '../../hooks/useMediaViewer';
 
+/* 模板页 */
+
 // 开发阶段用在线占位图，正式环境替换为：import bgImg from '../../assets/bg-template.jpg'
 const bgImg = 'https://picsum.photos/750/1200?random=99';
 

@@ -2,6 +2,8 @@ import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
 import bgContribution from "../../../assets/smartDraw/01-03-02.png";
 
+/* 贡献榜/投稿 */
+
 export default function Contribution() {
   return (
     <div className={styles.page}>

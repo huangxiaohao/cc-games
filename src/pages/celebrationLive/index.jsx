@@ -2,6 +2,8 @@ import styles from './index.module.css';
 import celebrationLiveImg from '../../assets/celebrationLive/01.png';
 import BackButton from '../../components/BackButton';
 
+/* 庆典直播 */
+
 export default function CelebrationLive() {
   return (
     <div className={styles.page}>
