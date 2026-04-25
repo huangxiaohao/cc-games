@@ -11,8 +11,18 @@
   display: block;
 }
 
+.info {
+  position: absolute;
+  top: 61.4vw;
+  left: 22vw;
+  width: 66vw;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
 .hotArea1 {
   position: absolute;
+  cursor: pointer;
   /* 调试阶段放开下面这行，上线前删掉 */
   /* background: rgba(255, 0, 0, 0.2); */
   /* ===== 以下四个值按设计稿比例调整 ===== */
@@ -21,5 +31,52 @@
   width: 66%;
   height: 8%;
   /* ================================= */
+}
+
+.hotArea2 {
+  position: absolute;
   cursor: pointer;
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  /* ===== 位置坐标待补充 ===== */
+  top: 45%;
+  left: 17%;
+  width: 66%;
+  height: 8%;
+}
+
+.hotArea3 {
+  position: absolute;
+  cursor: pointer;
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  /* ===== 位置坐标待补充 ===== */
+  top: 56%;
+  left: 17%;
+  width: 66%;
+  height: 8%;
+}
+
+.hotArea4 {
+  position: absolute;
+  cursor: pointer;
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  /* ===== 位置坐标待补充 ===== */
+  top: 67%;
+  left: 17%;
+  width: 66%;
+  height: 8%;
+}
+
+.hotArea5 {
+  position: absolute;
+  cursor: pointer;
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  /* ===== 位置坐标待补充 ===== */
+  top: 78%;
+  left: 17%;
+  width: 66%;
+  height: 8%;
 }
