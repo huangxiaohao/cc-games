@@ -11,6 +11,15 @@ export default function SmartDraw() {
 
       {/* 返回首页 */}
       <div className={styles.backArea} onClick={() => navigate('/')} />
+
+      {/* 点击热区1 */}
+      <div className={styles.hotArea1} onClick={() => alert("点击热区1")} />
+
+      {/* 点击热区2 */}
+      <div className={styles.hotArea2} onClick={() => alert("点击热区2")} />
+
+      {/* 点击热区3 */}
+      <div className={styles.hotArea3} onClick={() => alert("点击热区3")} />
     </div>
   );
 }

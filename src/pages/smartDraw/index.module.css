@@ -12,10 +12,46 @@
 }
 
 .backArea {
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
   position: absolute;
-  top: 5%;
+  top: 1%;
   left: 5%;
-  width: 10%;
-  height: 5%;
+  width: 15%;
+  height: 4%;
   cursor: pointer;
 }
+
+.hotArea1 {
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  position: absolute;
+  cursor: pointer;
+  top: 6%;
+  left: 6%;
+  width: 29%;
+  height: 2.5%;
+}
+
+.hotArea2 {
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  position: absolute;
+  cursor: pointer;
+  top: 6%;
+  left: 36%;
+  width: 29%;
+  height: 2.5%;
+}
+
+.hotArea3 {
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  position: absolute;
+  cursor: pointer;
+  top: 6%;
+  left: 66%;
+  width: 29%;
+  height: 2.5%;
+}
+
