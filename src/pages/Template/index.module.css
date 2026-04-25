@@ -1,0 +1,75 @@
+.page { position: relative; width: 100%; }
+.bg { width: 100%; height: auto; display: block; pointer-events: none; }
+
+/* 所有尺寸 = 设计稿标注 px ÷ 20 */
+
+/* 返回按钮（BackButton 组件已处理，无需在这里写） */
+
+/* Tab 热区 */
+.tabA {
+  position: absolute;
+  top: 20rem;    /* 设计稿 400px → 20rem */
+  left: 2rem;
+  width: 16rem;
+  height: 5rem;
+  cursor: pointer;
+  /* background: rgba(255,0,0,0.2); */
+}
+.tabB {
+  position: absolute;
+  top: 20rem;
+  left: 19rem;
+  width: 16rem;
+  height: 5rem;
+  cursor: pointer;
+  /* background: rgba(255,0,0,0.2); */
+}
+
+/* Tab 内容区 */
+.panelA {
+  position: absolute;
+  top: 28rem;
+  left: 2rem;
+  width: 34rem;
+  /* background: rgba(255,255,0,0.2); */
+}
+.panelB {
+  position: absolute;
+  top: 28rem;
+  left: 2rem;
+  width: 34rem;
+  /* background: rgba(0,255,255,0.2); */
+}
+
+/* 按钮热区 */
+.btnNext {
+  position: absolute;
+  top: 80rem;
+  left: 5rem;
+  width: 27.5rem;
+  height: 5rem;
+  cursor: pointer;
+  /* background: rgba(255,0,0,0.2); */
+}
+
+/* 动态数据文字 */
+.scoreText {
+  position: absolute;
+  top: 50rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3.2rem;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+/* 媒体预览触发区 */
+.mediaTrigger {
+  position: absolute;
+  top: 60rem;
+  left: 5rem;
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+  /* background: rgba(0,255,0,0.2); */
+}

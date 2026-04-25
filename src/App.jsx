@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 import { useDingtalkLogin } from './hooks/useDingtalk';
 import Home from './pages/Home';
+import Template from './pages/Template';
 
 function AppRoutes() {
   const { login } = useDingtalkLogin();
@@ -26,6 +27,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/template" element={<Template />} />
     </Routes>
   );
 }
