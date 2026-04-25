@@ -19,3 +19,39 @@
   height: 4%;
   cursor: pointer;
 }
+
+.btn1 {
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  position: absolute;
+  width: 51%;
+  height: 6%;
+  top: 78%;
+  left: 25%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.btn2 {
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  position: absolute;
+  width: 39%;
+  height: 6%;
+  top: 87%;
+  left: 9%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.btn3 {
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  position: absolute;
+  width: 39%;
+  height: 6%;
+  top: 87%;
+  left: 54%;
+  z-index: 1;
+  cursor: pointer;
+}
