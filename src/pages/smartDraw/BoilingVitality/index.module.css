@@ -1,0 +1,33 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gif {
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  position: absolute;
+  width: 56%;
+  height: auto;
+  top: 9%;
+  left: 21%;
+  z-index: 1;
+  /* transform: translate(-50%, -50%); */
+}
+
+.backArea {
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 15%;
+  height: 4%;
+  cursor: pointer;
+}

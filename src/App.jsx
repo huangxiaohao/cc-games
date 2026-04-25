@@ -4,6 +4,9 @@ import { UserProvider } from './context/UserContext';
 import { useDingtalkLogin } from './hooks/useDingtalk';
 import Home from './pages/Home';
 import SmartDraw from './pages/smartDraw';
+import WarmService from './pages/smartDraw/WarmService';
+import BoilingVitality from './pages/smartDraw/BoilingVitality';
+import AIVoice from './pages/smartDraw/AIVoice';
 import Template from './pages/Template';
 import VideoSplash from './pages/VideoSplash';
 
@@ -31,6 +34,9 @@ function AppRoutes() {
       <Route path="/" element={<VideoSplash />} />
       <Route path="/home" element={<Home />} />
       <Route path="/smartDraw" element={<SmartDraw />} />
+      <Route path="/smartDraw/warm-service" element={<WarmService />} />
+      <Route path="/smartDraw/boiling-vitality" element={<BoilingVitality />} />
+      <Route path="/smartDraw/ai-voice" element={<AIVoice />} />
       <Route path="/template" element={<Template />} />
     </Routes>
   );

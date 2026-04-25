@@ -12,14 +12,14 @@ export default function SmartDraw() {
       {/* 返回首页 */}
       <div className={styles.backArea} onClick={() => navigate('/home')} />
 
-      {/* 点击热区1 */}
-      <div className={styles.hotArea1} onClick={() => alert("点击热区1")} />
+      {/* 让服务升温 */}
+      <div className={styles.hotArea1} onClick={() => navigate('/smartDraw/warm-service')} />
 
-      {/* 点击热区2 */}
-      <div className={styles.hotArea2} onClick={() => alert("点击热区2")} />
+      {/* 让活力沸腾 */}
+      <div className={styles.hotArea2} onClick={() => navigate('/smartDraw/boiling-vitality')} />
 
-      {/* 点击热区3 */}
-      <div className={styles.hotArea3} onClick={() => alert("点击热区3")} />
+      {/* 让AI传声 */}
+      <div className={styles.hotArea3} onClick={() => navigate('/smartDraw/ai-voice')} />
     </div>
   );
 }
