@@ -5,6 +5,7 @@ import { useDingtalkLogin } from './hooks/useDingtalk';
 import Home from './pages/Home';
 import SmartDraw from './pages/smartDraw';
 import Template from './pages/Template';
+import VideoSplash from './pages/VideoSplash';
 
 function AppRoutes() {
   const { login } = useDingtalkLogin();
@@ -27,7 +28,8 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<VideoSplash />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/smartDraw" element={<SmartDraw />} />
       <Route path="/template" element={<Template />} />
     </Routes>
