@@ -10,7 +10,7 @@ export default function SmartDraw() {
       <img src={bgSmartDraw} alt="智绘新章" className={styles.img} />
 
       {/* 返回首页 */}
-      <div className={styles.backArea} onClick={() => navigate('/')} />
+      <div className={styles.backArea} onClick={() => navigate('/home')} />
 
       {/* 点击热区1 */}
       <div className={styles.hotArea1} onClick={() => alert("点击热区1")} />
