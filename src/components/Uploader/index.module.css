@@ -1,0 +1,49 @@
+.trigger {
+  position: absolute;
+  cursor: pointer;
+  z-index: 5;
+}
+.progressMask {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progressBox {
+  width: 28rem;
+  background: rgba(255,255,255,0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  height: 3rem;
+}
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #FFD700, #FF8C00);
+  transition: width 0.2s ease;
+}
+.progressText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.4rem;
+}
+.errorToast {
+  position: fixed;
+  bottom: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(220,50,50,0.9);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  z-index: 1000;
+  white-space: nowrap;
+}

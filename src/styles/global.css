@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* 页面通用容器 */
+.page {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 背景图：宽撑满，高自适应，永远不写死高度 */
+.page-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
