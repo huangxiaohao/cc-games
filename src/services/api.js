@@ -56,7 +56,8 @@ export async function getWarmServiceList() {
 
 export async function getBoilingVitalityList() {
   if (USE_MOCK) return mock.mockBoilingVitalityList;
-  return request('/boiling-vitality/list');
+  const res = await request('/activity/energy/star-ranking');
+  return res.data;
 }
 
 export async function submitAIVoiceSubmission(data) {

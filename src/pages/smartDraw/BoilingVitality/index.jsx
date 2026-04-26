@@ -22,7 +22,7 @@ export default function BoilingVitality() {
         <img src={gifBoilingVitality} alt="" className={styles.gif} />
         <div className={styles.info}>
           {list.map((item, index) => (
-            <div key={index}>{item.name}　{item.calorie}kcal</div>
+            <div key={index}>{item.userName}　{item.calorie}kcal</div>
           ))}
         </div>
       </div>
