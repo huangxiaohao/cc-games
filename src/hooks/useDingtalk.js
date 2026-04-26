@@ -1,6 +1,6 @@
 import * as dd from 'dingtalk-jsapi';
 import { useUser } from '../context/UserContext';
-import { dingtalkLogin } from '../services/api';
+import { dingtalkLogin, mockLogin } from '../services/api';
 
 export function isDingtalk() {
   return /DingTalk/i.test(navigator.userAgent);
@@ -10,11 +10,11 @@ export function useDingtalkLogin() {
   const { setUser } = useUser();
 
   async function login() {
-    // ---- 非钉钉环境（开发调试）：直接 mock ----
+    // ---- 非钉钉环境（开发调试）：调用 mock 登录接口 ----
     if (!isDingtalk()) {
-      const mockUser = { userId: 'dev-001', userName: '开发测试', token: 'mock-token' };
-      setUser(mockUser);
-      return mockUser;
+      const userInfo = await mockLogin();
+      setUser(userInfo);
+      return userInfo;
     }
 
     // ---- 钉钉环境：标准免登流程 ----

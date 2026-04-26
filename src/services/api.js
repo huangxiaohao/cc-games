@@ -1,7 +1,7 @@
 import * as mock from '../mock/data';
 
 // ⚑ 接口 ready 后改为 false
-const USE_MOCK = true;
+const USE_MOCK = false;
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('token') || '';
@@ -14,6 +14,19 @@ async function request(path, options = {}) {
   });
   if (!res.ok) throw new Error(`请求失败: ${res.status}`);
   return res.json();
+}
+
+export async function mockLogin() {
+  const res = await fetch('/api/mock-login/select-user', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify({ mockUserId: '0124631849001206438' }),
+  });
+  if (!res.ok) throw new Error(`mock登录失败: ${res.status}`);
+  const data = await res.json();
+  if (data.token) localStorage.setItem('token', data.token);
+  return data;
 }
 
 export async function dingtalkLogin(code) {

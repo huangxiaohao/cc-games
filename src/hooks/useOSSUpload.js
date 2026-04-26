@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getOSSToken, uploadToOSS } from '../services/oss';
+import { uploadToOSS } from '../services/oss';
 
 const SIZE_LIMIT = { video: 100 * 1024 * 1024, image: 20 * 1024 * 1024 };
 
@@ -21,8 +21,7 @@ export function useOSSUpload() {
     setError(null);
     setProgress(0);
     try {
-      const token = await getOSSToken(file.name, file.type);
-      const url = await uploadToOSS(file, token, setProgress);
+      const url = await uploadToOSS(file, setProgress);
       return url;
     } catch (err) {
       setError(err.message);
