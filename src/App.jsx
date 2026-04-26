@@ -14,6 +14,7 @@ import PointRank from './pages/pointRank';
 import CelebrationLive from './pages/celebrationLive';
 import Template from './pages/Template';
 import VideoSplash from './pages/VideoSplash';
+import GifSplash from "./pages/GifSplash";
 
 function AppRoutes() {
   const { login } = useDingtalkLogin();
@@ -37,7 +38,8 @@ function AppRoutes() {
   return (
     <Routes>
       {/* 开屏页 */}
-      <Route path="/" element={<VideoSplash />} />
+      {/* <Route path="/" element={<VideoSplash />} /> */}
+      <Route path="/" element={<GifSplash />} />
       {/* 首页 */}
       <Route path="/home" element={<Home />} />
       {/* 智绘新章 */}
