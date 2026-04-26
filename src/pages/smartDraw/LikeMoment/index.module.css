@@ -1,8 +1,14 @@
 .page {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgWrapper {
   position: relative;
+  width: 100%;
 }
 
 .img {
@@ -11,3 +17,155 @@
   display: block;
 }
 
+/* 标题 - 居中在 BackButton 下方 */
+.title {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  z-index: 5;
+}
+
+/* 排名容器 - 固定高度，内部滚动 */
+.rankingContainer {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  overflow-x: hidden;
+  height: 68%;  /* 固定高度，超出可滚动 */
+  overflow-y: auto;
+  /* 移动端滚动优化 */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 第一名 - 独占一行，居中 */
+.rankFirst {
+  position: relative;
+  width: 100%;
+  margin-bottom: 4%;
+  display: flex;
+  justify-content: center;
+}
+
+.rankFirstInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 第一名内部徽章底板 - 相对定位 */
+.rankFirstInner .badgeBase {
+  position: relative;
+}
+
+/* 第一名内部排名徽章 - 绝对定位在徽章上方 */
+.rankFirstInner .rankBadge {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  z-index: 10;
+}
+
+/* 第一名内部缩略图 - 绝对定位在徽章上 */
+.rankFirstInner .thumbnail {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 55%;
+}
+
+/* 后续排名 - 两两一行（每行独立div） */
+.rankRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4%;
+}
+
+.rankItem {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.rankItemInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 排名徽章 - 绝对定位在徽章底板上方 */
+.rankItemInner .rankBadge {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  z-index: 10;
+}
+
+/* 徽章底板 - 第一名大尺寸 */
+.rankFirstInner .badgeBase {
+  width: 60vw;
+  height: auto;
+  display: block;
+}
+
+/* 徽章底板 - 后续排名小尺寸 */
+.rankItemInner .badgeBase {
+  width: 50vw;
+  height: auto;
+  display: block;
+}
+
+/* 缩略图层 - 叠加在徽章底板上 */
+.rankFirstInner .thumbnail {
+  position: absolute;
+  top: 7%;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 46%;
+  height: 46%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.rankItemInner .thumbnail {
+  position: absolute;
+  top: 8%;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 44%;
+  height: 44%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* 徽章上的数字 */
+.badgeNum {
+  position: absolute;
+  top: 78.6%;
+  left: 45%;
+  width: 17vw;
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: left;
+  z-index: 5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* 加载中提示 */
+.loadingTip {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  padding: 10px 0;
+}
