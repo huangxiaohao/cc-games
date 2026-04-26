@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 /* 开屏页 */
 
 // public 目录下的资源直接用 / 路径，不经过 Vite 模块解析
-const carVideo = '/car.mp4';
+const carVideo = '/car-fixed.mp4';
 
 export default function VideoSplash() {
   const navigate = useNavigate();
