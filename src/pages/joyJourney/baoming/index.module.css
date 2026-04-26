@@ -27,6 +27,7 @@
     width: 100%;
     height: auto;
     display: block;
+    pointer-events: none;
 }
 
 .hotArea1 {
@@ -85,4 +86,20 @@
     outline: none;
     color: #fff;
     font-size: 1.4rem;
+}
+
+.uploadTag1 {
+    position: absolute;
+    top: 31%;
+    right: 5%;
+    color: #4caf50;
+    font-size: 1.2rem;
+}
+
+.uploadTag2 {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    color: #4caf50;
+    font-size: 1.2rem;
 }
