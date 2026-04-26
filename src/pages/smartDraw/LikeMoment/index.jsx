@@ -1,12 +1,13 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
-import { getLikeMomentList } from '../../../services/api';
+import { getLikeMomentList, toggleLikeMoment } from '../../../services/api';
 
 // 资源导入
 import bg from "../../../assets/smartDraw/01-03-031.png";
 import titleImg from "../../../assets/smartDraw/01-03-032.png";
 import badgeBase from "../../../assets/smartDraw/01-03-033.png";
+import badgeBaseLiked from "../../../assets/smartDraw/01-03-033-1.png";
 import rankBadge1 from "../../../assets/smartDraw/01-03-034.png";
 import rankBadge2 from "../../../assets/smartDraw/01-03-035.png";
 import rankBadge3 from "../../../assets/smartDraw/01-03-036.png";
@@ -24,6 +25,7 @@ export default function LikeMoment() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [likedIds, setLikedIds] = useState(new Set()); // 本地维护点赞状态
   const containerRef = useRef(null);
 
   // 加载数据
@@ -77,10 +79,25 @@ export default function LikeMoment() {
   const currentData = dataList;
 
   // 徽章数字点击事件 - 在这里写你的逻辑
-  const handleBadgeClick = (item) => {
-    console.log('点击徽章:', item);
-    // TODO: 在这里实现你的点击逻辑
-    // item 数据结构: { id, rank, thumbnail, type }
+  const handleBadgeClick = async (item) => {
+    // 本地立即切换状态
+    setLikedIds(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(item.id)) {
+        newSet.delete(item.id);
+      } else {
+        newSet.add(item.id);
+      }
+      return newSet;
+    });
+
+    try {
+      await toggleLikeMoment(item.id);
+      // 重新加载数据（真实接口返回最新状态）
+      loadData(1, true);
+    } catch (err) {
+      console.error('点赞失败:', err);
+    }
   };
 
   return (
@@ -103,7 +120,7 @@ export default function LikeMoment() {
             <div className={styles.rankFirst}>
               <div className={styles.rankFirstInner}>
                 <img src={rankBadges[0]} alt={`排名${currentData[0].rank}`} className={styles.rankBadge} />
-                <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
+                <img src={likedIds.has(currentData[0].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                 <img src={currentData[0].thumbnail} alt="缩略图" className={styles.thumbnail} />
                 <span className={styles.badgeNum}>{currentData[0].rank}</span>
                 <div className={`${styles.badgeClickArea} ${styles.firstBadgeClickArea}`} onClick={() => handleBadgeClick(currentData[0])} />
@@ -117,7 +134,7 @@ export default function LikeMoment() {
               <div className={styles.rankItem}>
                 <div className={styles.rankItemInner}>
                   <img src={rankBadges[1]} alt={`排名${currentData[1].rank}`} className={styles.rankBadge} />
-                  <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
+                  <img src={likedIds.has(currentData[1].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[1].thumbnail} alt="缩略图" className={styles.thumbnail} />
                   <span className={styles.badgeNum}>{currentData[1].rank}</span>
                   <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[1])} />
@@ -126,7 +143,7 @@ export default function LikeMoment() {
               <div className={styles.rankItem}>
                 <div className={styles.rankItemInner}>
                   <img src={rankBadges[2]} alt={`排名${currentData[2].rank}`} className={styles.rankBadge} />
-                  <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
+                  <img src={likedIds.has(currentData[2].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[2].thumbnail} alt="缩略图" className={styles.thumbnail} />
                   <span className={styles.badgeNum}>{currentData[2].rank}</span>
                   <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[2])} />
@@ -141,7 +158,7 @@ export default function LikeMoment() {
               <div className={styles.rankItem}>
                 <div className={styles.rankItemInner}>
                   <img src={rankBadges[3]} alt={`排名${currentData[3].rank}`} className={styles.rankBadge} />
-                  <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
+                  <img src={likedIds.has(currentData[3].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[3].thumbnail} alt="缩略图" className={styles.thumbnail} />
                   <span className={styles.badgeNum}>{currentData[3].rank}</span>
                   <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[3])} />
@@ -150,7 +167,7 @@ export default function LikeMoment() {
               <div className={styles.rankItem}>
                 <div className={styles.rankItemInner}>
                   <img src={rankBadges[4]} alt={`排名${currentData[4].rank}`} className={styles.rankBadge} />
-                  <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
+                  <img src={likedIds.has(currentData[4].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[4].thumbnail} alt="缩略图" className={styles.thumbnail} />
                   <span className={styles.badgeNum}>{currentData[4].rank}</span>
                   <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[4])} />
@@ -167,7 +184,7 @@ export default function LikeMoment() {
                 <div key={item.id} className={styles.rankRow}>
                   <div className={styles.rankItem}>
                     <div className={styles.rankItemInner}>
-                      <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
+                      <img src={likedIds.has(item.id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                       <img src={item.thumbnail} alt="缩略图" className={styles.thumbnail} />
                       <span className={styles.badgeNum}>{item.rank}</span>
                       <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(item)} />
@@ -176,7 +193,7 @@ export default function LikeMoment() {
                   {nextItem && (
                     <div className={styles.rankItem}>
                       <div className={styles.rankItemInner}>
-                        <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
+                        <img src={likedIds.has(nextItem.id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                         <img src={nextItem.thumbnail} alt="缩略图" className={styles.thumbnail} />
                         <span className={styles.badgeNum}>{nextItem.rank}</span>
                         <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(nextItem)} />

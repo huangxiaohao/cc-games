@@ -82,6 +82,7 @@ export async function submitForm(data) {
   });
 }
 
+// 点赞列表
 export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
   if (true) {
     await new Promise(r => setTimeout(r, 300));
@@ -91,6 +92,7 @@ export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
       rank: start + i + 123456,
       thumbnail: `https://picsum.photos/200/200?random=${start + i + 1}`,
       type: (start + i) % 3 === 0 ? "video" : "image",
+      liked: false,  // 是否已点赞
     }));
     return {
       list,
@@ -100,4 +102,16 @@ export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
     };
   }
   return request(`/like-moment/list?page=${page}&pageSize=${pageSize}`);
+}
+
+// 点赞/取消点赞
+export async function toggleLikeMoment(id) {
+  if (true) {
+    await new Promise(r => setTimeout(r, 200));
+    return { success: true };
+  }
+  return request(`/like-moment/like`, {
+    method: 'POST',
+    body: JSON.stringify({ id }),
+  });
 }
