@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
-import bgAIVoice from "../../../assets/smartDraw/01-03.png";
+import bgAIVoice from "../../../assets/smartDraw/05.jpg";
 
 /* AI好声音 */
 
@@ -10,11 +10,13 @@ export default function AIVoice() {
 
   return (
     <div className={styles.page}>
-      <img src={bgAIVoice} alt="让AI传声" className={styles.img} />
-      <BackButton top={1} left={5} width={15} height={5} unit="%" />
-      <div className={styles.btn1} onClick={() => navigate('/smartDraw/glory-moment')} />
-      <div className={styles.btn2} onClick={() => navigate('/smartDraw/contribution')} />
-      <div className={styles.btn3} onClick={() => navigate('/smartDraw/like-moment')} />
+      <div className={styles.imgWrapper}>
+        <img src={bgAIVoice} alt="让AI传声" className={styles.img} />
+        <BackButton top={1} left={5} width={15} height={5} unit="%" />
+        <div className={styles.btn1} onClick={() => navigate('/smartDraw/glory-moment')} />
+        <div className={styles.btn2} onClick={() => navigate('/smartDraw/contribution')} />
+        <div className={styles.btn3} onClick={() => navigate('/smartDraw/like-moment')} />
+      </div>
     </div>
   );
 }

@@ -2,7 +2,11 @@
   width: 100%;
   min-height: 100vh;
   background: #000;
+}
+
+.imgWrapper {
   position: relative;
+  width: 100%;
 }
 
 .img {
@@ -17,7 +21,7 @@
   position: absolute;
   width: 51%;
   height: 6%;
-  top: 78%;
+  top: 74%;
   left: 25%;
   z-index: 1;
   cursor: pointer;
@@ -29,7 +33,7 @@
   position: absolute;
   width: 39%;
   height: 6%;
-  top: 87%;
+  top: 83%;
   left: 9%;
   z-index: 1;
   cursor: pointer;
@@ -41,7 +45,7 @@
   position: absolute;
   width: 39%;
   height: 6%;
-  top: 87%;
+  top: 83%;
   left: 54%;
   z-index: 1;
   cursor: pointer;

@@ -8,7 +8,7 @@ export default function LikeMoment() {
   return (
     <div className={styles.page}>
       <img src={bgLikeMoment} alt="点赞" className={styles.img} />
-      <BackButton top={1} left={5} width={15} height={5} unit="%" />
+      <BackButton top={1} left={5} width={15} height={5} unit="%" showImg={false} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
-import bgBoilingVitality from "../../../assets/smartDraw/01-02.png";
+import bgBoilingVitality from "../../../assets/smartDraw/04.jpg";
 import gifBoilingVitality from "../../../assets/smartDraw/01-02-01.gif";
 
 /* 沸腾活力 */
