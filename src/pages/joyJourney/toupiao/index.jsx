@@ -23,16 +23,18 @@ export default function Toupiao() {
       <div className={styles.imgWrapper}>
         <img src={bgImg} className={styles.img} alt="" />
         <BackButton top={2} left={2} width={4} height={4} showImg={false} />
-        <img src={imgs[index]} className={styles.centerImg} alt="" />
-        <div className={styles.hotArea1} onClick={() => setIndex((i) => (i + 1) % imgs.length)} />
-        <div className={styles.contentArea}>
-          {listItems.map((item) => (
-            <div key={item.id} className={styles.listItem}>
-              <img src={item.bg} className={styles.listItemBg} alt="" />
-              <div className={styles.itemBtn} onClick={() => {}} />
-            </div>
-          ))}
+        <div className={styles.centerWrapper}>
+          <img src={imgs[index]} className={styles.centerImg} alt="" />
+          <div className={styles.contentArea}>
+            {listItems.map((item) => (
+              <div key={item.id} className={styles.listItem}>
+                <img src={item.bg} className={styles.listItemBg} alt="" />
+                <div className={styles.itemBtn} onClick={() => {}} />
+              </div>
+            ))}
+          </div>
         </div>
+        <div className={styles.hotArea1} onClick={() => setIndex((i) => (i + 1) % imgs.length)} />
       </div>
     </div>
   );

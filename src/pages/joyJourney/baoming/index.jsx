@@ -11,12 +11,14 @@ export default function Baoming() {
       <div className={styles.imgWrapper}>
         <img src={bgImg} className={styles.img} alt="" />
         <BackButton top={2} left={2} width={4} height={4} />
-        <img src={centerImg} className={styles.centerImg} alt="" />
-        <div className={styles.hotArea1} onClick={() => {}} />
-        <div className={styles.hotArea2} onClick={() => {}} />
-        <div className={styles.hotArea3} onClick={() => {}} />
-        <input className={styles.input1} placeholder="" />
-        <input className={styles.input2} placeholder="" />
+        <div className={styles.centerWrapper}>
+          <img src={centerImg} className={styles.centerImg} alt="" />
+          <input className={styles.input1} placeholder="" />
+          <input className={styles.input2} placeholder="" />
+          <div className={styles.hotArea1} onClick={() => {}} />
+          <div className={styles.hotArea2} onClick={() => {}} />
+          <div className={styles.hotArea3} onClick={() => {}} />
+        </div>
       </div>
     </div>
   );

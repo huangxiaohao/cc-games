@@ -16,39 +16,44 @@
     display: block;
 }
 
-.centerImg {
+.centerWrapper {
     position: absolute;
     top: 12%;
     left: 5%;
     width: 90%;
+}
+
+.centerImg {
+    width: 100%;
     height: auto;
+    display: block;
 }
 
 .hotArea1 {
     position: absolute;
     cursor: pointer;
     /* background: rgba(255, 0, 0, 0.2); */
-    top: 37%;
+    top: 35%;
     left: 17%;
     width: 66%;
-    height: 10%;
+    height: 13%;
 }
 
 .hotArea2 {
     position: absolute;
     cursor: pointer;
     /* background: rgba(255, 0, 0, 0.2); */
-    top: 51%;
+    top: 54%;
     left: 17%;
     width: 66%;
-    height: 10%;
+    height: 13%;
 }
 
 .hotArea3 {
     position: absolute;
     cursor: pointer;
     /* background: rgba(255, 0, 0, 0.2); */
-    top: 66%;
+    top: 76%;
     left: 32%;
     width: 36%;
     height: 5%;
@@ -56,10 +61,10 @@
 
 .input1 {
     position: absolute;
-    top: 23.5%;
-    left: 34%;
-    width: 44%;
-    height: 3%;
+    top: 16%;
+    left: 33%;
+    width: 48%;
+    height: 4%;
     /* background: rgba(255, 0, 0, 0.2); */
     background: transparent;
     border: none;
@@ -70,10 +75,10 @@
 
 .input2 {
     position: absolute;
-    top: 29%;
-    left: 34%;
-    width: 44%;
-    height: 3%;
+    top: 23.5%;
+    left: 33%;
+    width: 48%;
+    height: 4%;
     /* background: rgba(255, 0, 0, 0.2); */
     background: transparent;
     border: none;
