@@ -1,2 +1,39 @@
-.page { position: relative; width: 100%; }
-.bg { width: 100%; height: auto; display: block; pointer-events: none; }
+.page {
+  width: 100%;
+  min-height: 100svh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hotArea1 {
+  position: absolute;
+  cursor: pointer;
+  /* ===== 以下四个值按设计稿比例调整 ===== */
+  top: 27%;
+  left: 11%;
+  width: 77%;
+  height: 12%;
+  /* ================================= */
+}
+
+.hotArea2 {
+  position: absolute;
+  cursor: pointer;
+  /* ===== 位置坐标待补充 ===== */
+  top: 46%;
+  left: 11%;
+  width: 77%;
+  height: 12%;
+}
