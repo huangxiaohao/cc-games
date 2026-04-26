@@ -11,6 +11,7 @@ export default function Uploader({ onSuccess, triggerStyle, accept = 'image/*,vi
     if (!file) return;
     try {
       const url = await upload(file);
+      console.log('上传成功:', url);
       onSuccess?.(url, file);
     } catch {}
     e.target.value = '';
