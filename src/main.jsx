@@ -2,6 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/global.css'
 import App from './App'
+import VConsole from 'vconsole'
+
+// TODO: 上线前关掉 👇
+new VConsole()
 
 // rem 适配：设计稿 750px，1rem = 20px
 function setRem() {
