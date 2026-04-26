@@ -5,9 +5,71 @@
   position: relative;
 }
 
+.imgWrapper {
+  position: relative;
+  width: 100%;
+}
+
 .img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+.input1,
+.input2,
+.input3,
+.input4 {
+  position: absolute;
+  left: 14%;
+  width: 70%;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid transparent;
+  /* border: 1px solid red; */
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.4rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input1 {
+  top: 16.7%;
+}
+
+.input2 {
+  top: 27.3%;
+}
+
+.input3 {
+  top: 38%;
+}
+
+.input4 {
+  top: 47%;
+}
+
+
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.submitBtn {
+  position: absolute;
+  left: 30%;
+  top: 94%;
+  width: 40%;
+  height: 4%;
+}
+
+.uploadInfo {
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  white-space: nowrap;
+}

@@ -1,7 +1,7 @@
 import * as mock from '../mock/data';
 
 // ⚑ 接口 ready 后改为 false
-const USE_MOCK = true;
+const USE_MOCK = false;
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('token') || '';
@@ -57,6 +57,17 @@ export async function getWarmServiceList() {
 export async function getBoilingVitalityList() {
   if (USE_MOCK) return mock.mockBoilingVitalityList;
   return request('/boiling-vitality/list');
+}
+
+export async function submitAIVoiceSubmission(data) {
+  if (USE_MOCK) {
+    await new Promise(r => setTimeout(r, 500));
+    return { success: true };
+  }
+  return request('/ai-voice/submissions', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  });
 }
 
 export async function submitForm(data) {
