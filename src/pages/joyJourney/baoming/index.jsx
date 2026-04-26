@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
 import bgImg from '../../../assets/joyJ/09.png';
-import centerImg from '../../../assets/joyJ/02.png';
+import centerImg from '../../../assets/joyJ/03.png';
 
 /* 乐启新程 - 报名 */
 
