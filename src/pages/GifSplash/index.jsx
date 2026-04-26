@@ -11,7 +11,7 @@ export default function GifSplash() {
     // 8秒后跳转
     const timeout = setTimeout(() => {
       navigate('/home');
-    }, 700000000);
+    }, 7000);
 
     return () => {
       clearTimeout(timeout);
