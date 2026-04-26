@@ -1,0 +1,27 @@
+.page { position: relative; width: 100%; }
+.imgWrapper { position: relative; width: 100%; }
+.img { width: 100%; height: auto; display: block; }
+
+/* 按钮热区1 */
+.hotArea1 {
+  position: absolute;
+  cursor: pointer;
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  top: 5%;
+  left: 8%;
+  width: 40%;
+  height: 4%;
+}
+
+/* 按钮热区2 */
+.hotArea2 {
+  position: absolute;
+  cursor: pointer;
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+  top: 5%;
+  left: 52%;
+  width: 40%;
+  height: 4%;
+}

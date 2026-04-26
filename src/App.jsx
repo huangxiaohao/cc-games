@@ -12,6 +12,9 @@ import Contribution from './pages/smartDraw/Contribution';
 import LikeMoment from './pages/smartDraw/LikeMoment';
 import PointRank from './pages/pointRank';
 import CelebrationLive from './pages/celebrationLive';
+import JoyJourney from './pages/joyJourney';
+import Baoming from './pages/joyJourney/baoming';
+import Toupiao from './pages/joyJourney/toupiao';
 import Template from './pages/Template';
 import VideoSplash from './pages/VideoSplash';
 import GifSplash from "./pages/GifSplash";
@@ -62,6 +65,12 @@ function AppRoutes() {
       <Route path="/point-rank" element={<PointRank />} />
       {/* 庆典直播 */}
       <Route path="/celebration-live" element={<CelebrationLive />} />
+      {/* 乐启新程 */}
+      <Route path="/joy-journey" element={<JoyJourney />} />
+      {/* 乐启新程 - 报名 */}
+      <Route path="/joy-journey/baoming" element={<Baoming />} />
+      {/* 乐启新程 - 投票 */}
+      <Route path="/joy-journey/toupiao" element={<Toupiao />} />
     </Routes>
   );
 }

@@ -43,7 +43,7 @@ export default function Home() {
         <div className={styles.hotArea1} onClick={() => navigate("/smartDraw")} />
 
         {/* 点击热区2 - 乐启新程 */}
-        <div className={styles.hotArea2} onClick={() => alert("点击热区2")} />
+        <div className={styles.hotArea2} onClick={() => navigate("/joy-journey")} />
 
         {/* 点击热区3 - 运动汇*/}
         {/* <div className={styles.hotArea3} onClick={() => alert("点击热区3")} /> */}
