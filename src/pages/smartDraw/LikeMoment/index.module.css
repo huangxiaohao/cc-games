@@ -162,6 +162,24 @@
   text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
+/* 徽章数字点击区域 - 位置和大小由你调整 */
+.badgeClickArea {
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  width: 41vw;
+  height: 10vw;
+  z-index: 15;
+  cursor: pointer;
+  /* 调试阶段放开下面这行，上线前删掉 */
+  /* background: rgba(255, 0, 0, 0.2); */
+}
+
+/* 第一名专用 - 宽度更大 */
+.firstBadgeClickArea {
+  width: 50vw;
+}
+
 /* 加载中提示 */
 .loadingTip {
   text-align: center;

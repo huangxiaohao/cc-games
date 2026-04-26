@@ -66,3 +66,14 @@ export const mockMediaList = [
   { id: 2, type: 'image', url: 'https://picsum.photos/750/400?random=2' },
   { id: 3, type: 'video', url: 'https://www.w3schools.com/html/mov_bbb.mp4' },
 ];
+
+// 点赞瞬间 - 排名列表 Mock 数据
+export const mockLikeMomentList = {
+  list: Array.from({ length: 30 }, (_, i) => ({
+    id: i + 1,
+    rank: i + 123456,
+    thumbnail: `https://picsum.photos/200/200?random=${i + 1}`,
+    type: i % 3 === 0 ? 'video' : 'image',
+  })),
+  total: 30,
+};

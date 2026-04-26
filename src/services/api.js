@@ -81,3 +81,23 @@ export async function submitForm(data) {
     body: JSON.stringify(data),
   });
 }
+
+export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
+  if (true) {
+    await new Promise(r => setTimeout(r, 300));
+    const start = (page - 1) * pageSize;
+    const list = Array.from({ length: pageSize }, (_, i) => ({
+      id: start + i + 1,
+      rank: start + i + 123456,
+      thumbnail: `https://picsum.photos/200/200?random=${start + i + 1}`,
+      type: (start + i) % 3 === 0 ? "video" : "image",
+    }));
+    return {
+      list,
+      total: 30,
+      page,
+      pageSize,
+    };
+  }
+  return request(`/like-moment/list?page=${page}&pageSize=${pageSize}`);
+}

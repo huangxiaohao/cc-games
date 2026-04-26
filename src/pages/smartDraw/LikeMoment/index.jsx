@@ -1,6 +1,7 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
+import { getLikeMomentList } from '../../../services/api';
 
 // 资源导入
 import bg from "../../../assets/smartDraw/01-03-031.png";
@@ -14,25 +15,49 @@ import rankBadge5 from "../../../assets/smartDraw/01-03-038.png";
 
 const rankBadges = [rankBadge1, rankBadge2, rankBadge3, rankBadge4, rankBadge5];
 
-// Mock 数据（后续替换为真实接口）
-const mockData = Array.from({ length: 30 }, (_, i) => ({
-  id: i + 1,
-  rank: i + 187654,
-  thumbnail: `https://picsum.photos/200/200?random=${i + 1}`,
-  type: i % 3 === 0 ? 'video' : 'image',
-}));
-
 // 可配置常量
 const PAGE_SIZE_FIRST = 5;   // 第一页显示条数
 const PAGE_SIZE = 6;         // 后续每页条数（可改为10）
 
 export default function LikeMoment() {
-  const [displayCount, setDisplayCount] = useState(PAGE_SIZE_FIRST);
+  const [dataList, setDataList] = useState([]);
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
   const containerRef = useRef(null);
 
-  // 是否有更多数据
-  const hasMore = displayCount < mockData.length;
+  // 加载数据
+  const loadData = useCallback(async (pageNum, isReset = false) => {
+    if (loading) return;
+    setLoading(true);
+
+    try {
+      const pageSize = isReset ? PAGE_SIZE_FIRST : PAGE_SIZE;
+      const res = await getLikeMomentList({ page: pageNum, pageSize });
+
+      // 兼容接口返回格式：{ list, total } 或直接返回数组
+      const newList = Array.isArray(res) ? res : (res.list || []);
+
+      if (isReset) {
+        setDataList(newList);
+      } else {
+        setDataList(prev => [...prev, ...newList]);
+      }
+
+      // 判断是否还有更多
+      const total = res.total || newList.length;
+      setHasMore(dataList.length + newList.length < total);
+    } catch (err) {
+      console.error('加载失败:', err);
+    } finally {
+      setLoading(false);
+    }
+  }, [loading, dataList.length]);
+
+  // 初始加载
+  useEffect(() => {
+    loadData(1, true);
+  }, []);
 
   // 滚动到底部时加载更多
   const handleScroll = useCallback((e) => {
@@ -41,18 +66,22 @@ export default function LikeMoment() {
     // 滚动到距离底部 50px 时触发加载
     if (scrollHeight - scrollTop - clientHeight < 50) {
       if (!loading && hasMore) {
-        setLoading(true);
-        // 模拟加载延迟
-        setTimeout(() => {
-          setDisplayCount(prev => Math.min(prev + PAGE_SIZE, mockData.length));
-          setLoading(false);
-        }, 500);
+        const nextPage = page + 1;
+        setPage(nextPage);
+        loadData(nextPage);
       }
     }
-  }, [loading, hasMore]);
+  }, [loading, hasMore, page, loadData]);
 
   // 当前显示的数据
-  const currentData = mockData.slice(0, displayCount);
+  const currentData = dataList;
+
+  // 徽章数字点击事件 - 在这里写你的逻辑
+  const handleBadgeClick = (item) => {
+    console.log('点击徽章:', item);
+    // TODO: 在这里实现你的点击逻辑
+    // item 数据结构: { id, rank, thumbnail, type }
+  };
 
   return (
     <div className={styles.page}>
@@ -77,6 +106,7 @@ export default function LikeMoment() {
                 <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
                 <img src={currentData[0].thumbnail} alt="缩略图" className={styles.thumbnail} />
                 <span className={styles.badgeNum}>{currentData[0].rank}</span>
+                <div className={`${styles.badgeClickArea} ${styles.firstBadgeClickArea}`} onClick={() => handleBadgeClick(currentData[0])} />
               </div>
             </div>
           )}
@@ -90,6 +120,7 @@ export default function LikeMoment() {
                   <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[1].thumbnail} alt="缩略图" className={styles.thumbnail} />
                   <span className={styles.badgeNum}>{currentData[1].rank}</span>
+                  <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[1])} />
                 </div>
               </div>
               <div className={styles.rankItem}>
@@ -98,6 +129,7 @@ export default function LikeMoment() {
                   <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[2].thumbnail} alt="缩略图" className={styles.thumbnail} />
                   <span className={styles.badgeNum}>{currentData[2].rank}</span>
+                  <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[2])} />
                 </div>
               </div>
             </div>
@@ -112,6 +144,7 @@ export default function LikeMoment() {
                   <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[3].thumbnail} alt="缩略图" className={styles.thumbnail} />
                   <span className={styles.badgeNum}>{currentData[3].rank}</span>
+                  <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[3])} />
                 </div>
               </div>
               <div className={styles.rankItem}>
@@ -120,6 +153,7 @@ export default function LikeMoment() {
                   <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[4].thumbnail} alt="缩略图" className={styles.thumbnail} />
                   <span className={styles.badgeNum}>{currentData[4].rank}</span>
+                  <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[4])} />
                 </div>
               </div>
             </div>
@@ -136,6 +170,7 @@ export default function LikeMoment() {
                       <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
                       <img src={item.thumbnail} alt="缩略图" className={styles.thumbnail} />
                       <span className={styles.badgeNum}>{item.rank}</span>
+                      <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(item)} />
                     </div>
                   </div>
                   {nextItem && (
@@ -144,6 +179,7 @@ export default function LikeMoment() {
                         <img src={badgeBase} alt="徽章" className={styles.badgeBase} />
                         <img src={nextItem.thumbnail} alt="缩略图" className={styles.thumbnail} />
                         <span className={styles.badgeNum}>{nextItem.rank}</span>
+                        <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(nextItem)} />
                       </div>
                     </div>
                   )}
