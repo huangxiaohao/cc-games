@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './index.module.css';
 import BackButton from '../../../components/BackButton';
-import bgAIVoice from "../../../assets/smartDraw/05.jpg";
+import bgAIVoice from "../../../assets/smartDraw/05.png";
 
 /* AI好声音 */
 

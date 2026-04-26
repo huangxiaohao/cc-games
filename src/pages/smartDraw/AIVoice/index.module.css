@@ -19,10 +19,10 @@
   /* 调试阶段放开下面这行，上线前删掉 */
   /* background: rgba(255, 0, 0, 0.2); */
   position: absolute;
-  width: 51%;
+  width: 82%;
   height: 6%;
-  top: 74%;
-  left: 25%;
+  top: 75%;
+  left: 8%;
   z-index: 1;
   cursor: pointer;
 }

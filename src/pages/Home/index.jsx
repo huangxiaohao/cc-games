@@ -46,7 +46,7 @@ export default function Home() {
         <div className={styles.hotArea2} onClick={() => alert("点击热区2")} />
 
         {/* 点击热区3 - 运动汇*/}
-        <div className={styles.hotArea3} onClick={() => alert("点击热区3")} />
+        {/* <div className={styles.hotArea3} onClick={() => alert("点击热区3")} /> */}
 
         {/* 点击热区4 - 积分排名 */}
         <div

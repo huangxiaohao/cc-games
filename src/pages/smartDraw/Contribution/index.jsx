@@ -13,7 +13,7 @@ export default function Contribution() {
       <BackButton top={1} left={5} width={15} height={5} unit="%" />
       {/* 上传热区：根据设计稿调整 top/left/width/height */}
       <Uploader
-        triggerStyle={{ top: 114, left: 10, width: 18, height: 7 }}
+        triggerStyle={{ top: 114, left: 10, width: 18, height: 5 }}
       />
     </div>
   );
