@@ -8,7 +8,7 @@ export default function PointRank() {
   return (
     <div className={styles.page}>
       <img src={pointRankImg} className={styles.bg} alt="" />
-      <BackButton top={2} left={2} width={8} height={8} />
+      <BackButton top={2} left={2} width={4} height={4} />
     </div>
   );
 }

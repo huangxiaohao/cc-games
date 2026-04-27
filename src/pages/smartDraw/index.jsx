@@ -37,7 +37,7 @@ export default function SmartDraw() {
       <img src={bgSmartDraw} alt="智绘新章" className={styles.img} />
 
       {/* 返回首页 */}
-      <BackButton top={1} left={5} width={15} height={5} unit="%" onClick={() => navigate('/home')} />
+      <BackButton top={1} left={5} width={12} height={4} unit="%" onClick={() => navigate('/home')} />
 
       {/* 让服务升温 */}
       <div className={styles.hotArea1} onClick={() => navigate('/smartDraw/warm-service')} />

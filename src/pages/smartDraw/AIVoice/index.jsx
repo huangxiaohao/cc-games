@@ -12,7 +12,7 @@ export default function AIVoice() {
     <div className={styles.page}>
       <div className={styles.imgWrapper}>
         <img src={bgAIVoice} alt="让AI传声" className={styles.img} />
-        <BackButton top={1} left={5} width={15} height={5} unit="%" />
+        <BackButton top={1} left={5} width={13} height={6} unit="%" />
         <div className={styles.btn1} onClick={() => navigate('/smartDraw/glory-moment')} />
         <div className={styles.btn2} onClick={() => navigate('/smartDraw/contribution')} />
         <div className={styles.btn3} onClick={() => navigate('/smartDraw/like-moment')} />
