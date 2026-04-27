@@ -40,6 +40,17 @@ export default function LikeMoment() {
       // 兼容接口返回格式：{ list, total } 或直接返回数组
       const newList = Array.isArray(res) ? res : (res.list || []);
 
+      // 从接口数据中提取 voted 状态，同步到本地 likedIds
+      const newVotedIds = new Set(likedIds);
+      newList.forEach(item => {
+        if (item.voted) {
+          newVotedIds.add(item.id);
+        } else {
+          newVotedIds.delete(item.id);
+        }
+      });
+      setLikedIds(newVotedIds);
+
       if (isReset) {
         setDataList(newList);
       } else {
@@ -82,19 +93,18 @@ export default function LikeMoment() {
   const handleBadgeClick = async (item) => {
     const isLiked = likedIds.has(item.id);
 
-    // 本地立即切换状态
-    setLikedIds(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(item.id)) {
-        newSet.delete(item.id);
-      } else {
-        newSet.add(item.id);
-      }
-      return newSet;
-    });
-
     try {
       await toggleLikeMoment(item.id, isLiked);
+      // 请求成功后切换状态
+      setLikedIds(prev => {
+        const newSet = new Set(prev);
+        if (newSet.has(item.id)) {
+          newSet.delete(item.id);
+        } else {
+          newSet.add(item.id);
+        }
+        return newSet;
+      });
       // 重新加载数据（真实接口返回最新状态）
       loadData(1, true);
     } catch (err) {

@@ -115,6 +115,7 @@ export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
       thumbnail: item.mediaUrls?.[0] || '',
       userName: item.userName,
       teamName: item.teamName,
+      voted: item.voted ?? false,
     })),
     total: res.data?.total || 0,
   }));
