@@ -87,6 +87,11 @@ export async function getTeamRanking() {
   return request('/activity/points/zhix/teams/ranking');
 }
 
+// 获取徽章数量（用于智能绘制页面背景图切换）
+export async function getBadges() {
+  return request('/activity/energy/badges');
+}
+
 // 点赞列表
 export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
   if (USE_MOCK) {
