@@ -34,3 +34,29 @@
   display: block;
 }
 
+.hotArea1 {
+  position: absolute;
+  cursor: pointer;
+  top: 23%;
+  left: 15%;
+  width: 73%;
+  height: 9%;
+}
+
+.hotArea2 {
+  position: absolute;
+  cursor: pointer;
+  top: 36%;
+  left: 15%;
+  width: 73%;
+  height: 9%;
+}
+
+.hotArea3 {
+  position: absolute;
+  cursor: pointer;
+  top: 48%;
+  left: 15%;
+  width: 73%;
+  height: 9%;
+}
