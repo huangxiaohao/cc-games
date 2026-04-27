@@ -77,3 +77,14 @@ export const mockLikeMomentList = {
   })),
   total: 30,
 };
+
+// 战队排名 Mock 数据
+export const mockTeamRanking = {
+  data: [
+    { teamId: 3, teamName: 'CC', totalPoints: 19950, serviceWarmthPoints: 5000, aiVoicePoints: 8000, energyPoints: 6950 },
+    { teamId: 1, teamName: 'AA', totalPoints: 18474, serviceWarmthPoints: 4000, aiVoicePoints: 7000, energyPoints: 7474 },
+    { teamId: 2, teamName: 'BB', totalPoints: 17468, serviceWarmthPoints: 3000, aiVoicePoints: 6000, energyPoints: 8468 },
+    { teamId: 4, teamName: 'DD', totalPoints: 17435, serviceWarmthPoints: 3500, aiVoicePoints: 5500, energyPoints: 8435 },
+    { teamId: 5, teamName: 'EE', totalPoints: 12276, serviceWarmthPoints: 2000, aiVoicePoints: 4000, energyPoints: 6276 },
+  ],
+};

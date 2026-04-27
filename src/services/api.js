@@ -82,6 +82,11 @@ export async function submitForm(data) {
   });
 }
 
+export async function getTeamRanking() {
+  if (USE_MOCK) return mock.mockTeamRanking;
+  return request('/activity/points/zhix/teams/ranking');
+}
+
 // 点赞列表
 export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
   if (USE_MOCK) {

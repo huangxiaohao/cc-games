@@ -1,23 +1,36 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import styles from './index.module.css';
 import BackButton from '../../components/BackButton';
 import bgSmartDraw from "../../assets/smartDraw/01.png";
+import { getTeamRanking } from '../../services/api';
 
-/* 智绘新章 - 战队排名数据 */
-const teams = [
-  { name: '华东联合战队', value: 12276, color: '#FF6B6B' },
-  { name: '华东联合战队', value: 18474, color: '#4ECDC4' },
-  { name: '华东联合战队', value: 19950, color: '#45B7D1' },
-  { name: '华东联合战队', value: 17468, color: '#96CEB4' },
-  { name: '华东联合战队', value: 17435, color: '#DDA0DD' },
-];
+// 固定配色方案
+const COLORS = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#DDA0DD'];
 
 // 计算进度条百分比（基于最大值归一化）
-const maxValue = Math.max(...teams.map(t => t.value));
-const getPercent = (val) => (val / maxValue) * 100;
+const getPercent = (val, maxValue) => (val / maxValue) * 100;
 
 export default function SmartDraw() {
   const navigate = useNavigate();
+  const [teams, setTeams] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getTeamRanking()
+      .then((res) => {
+        const list = (res.data || []).map((item, index) => ({
+          name: item.teamName,
+          value: item.totalPoints,
+          color: COLORS[index % COLORS.length],
+        }));
+        setTeams(list);
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
+
+  const maxValue = teams.length > 0 ? Math.max(...teams.map(t => t.value)) : 0;
 
   return (
     <div className={styles.page}>
@@ -37,13 +50,13 @@ export default function SmartDraw() {
 
       {/* 战队排名进度条 */}
       <div className={styles.rankContainer}>
-        {teams.map((team) => (
+        {!loading && teams.map((team) => (
           <div key={team.name} className={styles.rankItem}>
             <div className={styles.teamName} style={{ color: team.color }}>{team.name}</div>
             <div className={styles.barContainer}>
               <div
                 className={styles.bar}
-                style={{ width: `${getPercent(team.value)}%`, backgroundColor: team.color }}
+                style={{ width: `${getPercent(team.value, maxValue)}%`, backgroundColor: team.color }}
               />
             </div>
             <div className={styles.value}>{team.value}</div>
