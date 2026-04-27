@@ -44,3 +44,56 @@
   height: 2.5%;
 }
 
+/* 战队排名区域 */
+.rankContainer {
+  position: absolute;
+  top: 27.5%;
+  left: 10%;
+  width: 78%;
+}
+
+.rankItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5%;
+  height: 8%;
+}
+
+.teamName {
+  width: 30%;
+  font-size: 1.4rem;
+  color: #fff;
+  white-space: nowrap;
+  padding-right: 3%;
+  text-align: left;
+}
+
+.barContainer {
+  width: 45%;
+  height: 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: 2%;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.value {
+  width: 20%;
+  text-align: right;
+  color: #fff;
+  font-size: 1.6rem;
+  /* padding-right: 2%; */
+}
+
+.bottomText {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  margin-top: -2%;
+  text-align: center;
+}
+
