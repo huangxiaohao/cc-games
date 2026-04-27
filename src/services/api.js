@@ -84,15 +84,17 @@ export async function submitForm(data) {
 
 // 点赞列表
 export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
-  if (true) {
-    await new Promise(r => setTimeout(r, 300));
+  if (USE_MOCK) {
+    await new Promise((r) => setTimeout(r, 300));
     const start = (page - 1) * pageSize;
     const list = Array.from({ length: pageSize }, (_, i) => ({
       id: start + i + 1,
-      rank: start + i + 123456,
+      voteCount: start + i + 123456,
       thumbnail: `https://picsum.photos/200/200?random=${start + i + 1}`,
+      userName: `用户${start + i + 1}`,
+      teamName: `队伍${start + i + 1}`,
       type: (start + i) % 3 === 0 ? "video" : "image",
-      liked: false,  // 是否已点赞
+      liked: false, // 是否已点赞
     }));
     return {
       list,
@@ -101,13 +103,22 @@ export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
       pageSize,
     };
   }
-  return request(`/like-moment/list?page=${page}&pageSize=${pageSize}`);
+  return request(`/ai-voice/submissions?pageNum=${page}&pageSize=${pageSize}`).then(res => ({
+    list: (res.data?.submissions || []).map(item => ({
+      id: item.id,
+      voteCount: item.voteCount,
+      thumbnail: item.mediaUrls?.[0] || '',
+      userName: item.userName,
+      teamName: item.teamName,
+    })),
+    total: res.data?.total || 0,
+  }));
 }
 
 // 点赞/取消点赞
 export async function toggleLikeMoment(id) {
-  if (true) {
-    await new Promise(r => setTimeout(r, 200));
+  if (USE_MOCK) {
+    await new Promise((r) => setTimeout(r, 200));
     return { success: true };
   }
   return request(`/like-moment/like`, {

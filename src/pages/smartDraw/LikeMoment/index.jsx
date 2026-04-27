@@ -115,11 +115,11 @@ export default function LikeMoment() {
           className={styles.rankingContainer}
           onScroll={handleScroll}
         >
-          {/* 第1名 - 独占一行 */}
+          {/* 第1名 - 独占一行居中 */}
           {currentData[0] && (
             <div className={styles.rankFirst}>
               <div className={styles.rankFirstInner}>
-                <img src={rankBadges[0]} alt={`排名${currentData[0].rank}`} className={styles.rankBadge} />
+                <img src={rankBadges[0]} alt="第1名" className={styles.rankBadge} />
                 <img src={likedIds.has(currentData[0].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                 <img src={currentData[0].thumbnail} alt="缩略图" className={styles.thumbnail} />
                 <span className={styles.userName}>{currentData[0].userName}</span>
@@ -130,70 +130,15 @@ export default function LikeMoment() {
             </div>
           )}
 
-          {/* 第2-3名 - 一行 */}
-          {currentData[1] && currentData[2] && (
-            <div className={styles.rankRow}>
-              <div className={styles.rankItem}>
-                <div className={styles.rankItemInner}>
-                  <img src={rankBadges[1]} alt={`排名${currentData[1].rank}`} className={styles.rankBadge} />
-                  <img src={likedIds.has(currentData[1].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
-                  <img src={currentData[1].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                  <span className={styles.userName}>{currentData[1].userName}</span>
-                  <span className={styles.teamName}>{currentData[1].teamName}</span>
-                  <span className={styles.badgeNum}>{currentData[1].voteCount}</span>
-                  <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[1])} />
-                </div>
-              </div>
-              <div className={styles.rankItem}>
-                <div className={styles.rankItemInner}>
-                  <img src={rankBadges[2]} alt={`排名${currentData[2].rank}`} className={styles.rankBadge} />
-                  <img src={likedIds.has(currentData[2].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
-                  <img src={currentData[2].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                  <span className={styles.userName}>{currentData[2].userName}</span>
-                  <span className={styles.teamName}>{currentData[2].teamName}</span>
-                  <span className={styles.badgeNum}>{currentData[2].voteCount}</span>
-                  <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[2])} />
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* 第4-5名 - 一行 */}
-          {currentData[3] && currentData[4] && (
-            <div className={styles.rankRow}>
-              <div className={styles.rankItem}>
-                <div className={styles.rankItemInner}>
-                  <img src={rankBadges[3]} alt={`排名${currentData[3].rank}`} className={styles.rankBadge} />
-                  <img src={likedIds.has(currentData[3].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
-                  <img src={currentData[3].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                  <span className={styles.userName}>{currentData[3].userName}</span>
-                  <span className={styles.teamName}>{currentData[3].teamName}</span>
-                  <span className={styles.badgeNum}>{currentData[3].voteCount}</span>
-                  <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[3])} />
-                </div>
-              </div>
-              <div className={styles.rankItem}>
-                <div className={styles.rankItemInner}>
-                  <img src={rankBadges[4]} alt={`排名${currentData[4].rank}`} className={styles.rankBadge} />
-                  <img src={likedIds.has(currentData[4].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
-                  <img src={currentData[4].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                  <span className={styles.userName}>{currentData[4].userName}</span>
-                  <span className={styles.teamName}>{currentData[4].teamName}</span>
-                  <span className={styles.badgeNum}>{currentData[4].voteCount}</span>
-                  <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[4])} />
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* 后续数据 - 两两一行 */}
-          {currentData.slice(5).map((item, idx) => {
+          {/* 第2名起 - 每行两个，左边就在左边，奇数时最后落单在左边 */}
+          {currentData.slice(1).reduce((rows, item, idx) => {
             if (idx % 2 === 0) {
-              const nextItem = currentData[5 + idx + 1];
-              return (
+              const nextItem = currentData.slice(1)[idx + 1];
+              rows.push(
                 <div key={item.id} className={styles.rankRow}>
                   <div className={styles.rankItem}>
                     <div className={styles.rankItemInner}>
+                      <img src={rankBadges[1 + idx]} alt={`第${2 + idx}名`} className={styles.rankBadge} />
                       <img src={likedIds.has(item.id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                       <img src={item.thumbnail} alt="缩略图" className={styles.thumbnail} />
                       <span className={styles.userName}>{item.userName}</span>
@@ -205,6 +150,7 @@ export default function LikeMoment() {
                   {nextItem && (
                     <div className={styles.rankItem}>
                       <div className={styles.rankItemInner}>
+                        <img src={rankBadges[2 + idx]} alt={`第${3 + idx}名`} className={styles.rankBadge} />
                         <img src={likedIds.has(nextItem.id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                         <img src={nextItem.thumbnail} alt="缩略图" className={styles.thumbnail} />
                         <span className={styles.userName}>{nextItem.userName}</span>
@@ -217,8 +163,8 @@ export default function LikeMoment() {
                 </div>
               );
             }
-            return null;
-          })}
+            return rows;
+          }, [])}
 
           {/* 加载中提示 */}
           {loading && <div className={styles.loadingTip}>正在加载...</div>}
