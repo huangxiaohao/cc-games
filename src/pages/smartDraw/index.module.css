@@ -85,15 +85,16 @@
 .value {
   width: 20%;
   text-align: right;
-  color: #fff;
+  color: #333;
   font-size: 1.6rem;
   /* padding-right: 2%; */
 }
 
 .bottomText {
-  color: rgba(255, 255, 255, 0.6);
+  /* color: rgba(255, 255, 255, 0.6); */
   font-size: 1.2rem;
   margin-top: -2%;
   text-align: center;
+  color: #333;
 }
 

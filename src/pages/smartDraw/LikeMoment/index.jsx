@@ -122,7 +122,9 @@ export default function LikeMoment() {
                 <img src={rankBadges[0]} alt={`排名${currentData[0].rank}`} className={styles.rankBadge} />
                 <img src={likedIds.has(currentData[0].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                 <img src={currentData[0].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                <span className={styles.badgeNum}>{currentData[0].rank}</span>
+                <span className={styles.userName}>{currentData[0].userName}</span>
+                <span className={styles.teamName}>{currentData[0].teamName}</span>
+                <span className={styles.badgeNum}>{currentData[0].voteCount}</span>
                 <div className={`${styles.badgeClickArea} ${styles.firstBadgeClickArea}`} onClick={() => handleBadgeClick(currentData[0])} />
               </div>
             </div>
@@ -136,7 +138,9 @@ export default function LikeMoment() {
                   <img src={rankBadges[1]} alt={`排名${currentData[1].rank}`} className={styles.rankBadge} />
                   <img src={likedIds.has(currentData[1].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[1].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                  <span className={styles.badgeNum}>{currentData[1].rank}</span>
+                  <span className={styles.userName}>{currentData[1].userName}</span>
+                  <span className={styles.teamName}>{currentData[1].teamName}</span>
+                  <span className={styles.badgeNum}>{currentData[1].voteCount}</span>
                   <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[1])} />
                 </div>
               </div>
@@ -145,7 +149,9 @@ export default function LikeMoment() {
                   <img src={rankBadges[2]} alt={`排名${currentData[2].rank}`} className={styles.rankBadge} />
                   <img src={likedIds.has(currentData[2].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[2].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                  <span className={styles.badgeNum}>{currentData[2].rank}</span>
+                  <span className={styles.userName}>{currentData[2].userName}</span>
+                  <span className={styles.teamName}>{currentData[2].teamName}</span>
+                  <span className={styles.badgeNum}>{currentData[2].voteCount}</span>
                   <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[2])} />
                 </div>
               </div>
@@ -160,7 +166,9 @@ export default function LikeMoment() {
                   <img src={rankBadges[3]} alt={`排名${currentData[3].rank}`} className={styles.rankBadge} />
                   <img src={likedIds.has(currentData[3].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[3].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                  <span className={styles.badgeNum}>{currentData[3].rank}</span>
+                  <span className={styles.userName}>{currentData[3].userName}</span>
+                  <span className={styles.teamName}>{currentData[3].teamName}</span>
+                  <span className={styles.badgeNum}>{currentData[3].voteCount}</span>
                   <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[3])} />
                 </div>
               </div>
@@ -169,7 +177,9 @@ export default function LikeMoment() {
                   <img src={rankBadges[4]} alt={`排名${currentData[4].rank}`} className={styles.rankBadge} />
                   <img src={likedIds.has(currentData[4].id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                   <img src={currentData[4].thumbnail} alt="缩略图" className={styles.thumbnail} />
-                  <span className={styles.badgeNum}>{currentData[4].rank}</span>
+                  <span className={styles.userName}>{currentData[4].userName}</span>
+                  <span className={styles.teamName}>{currentData[4].teamName}</span>
+                  <span className={styles.badgeNum}>{currentData[4].voteCount}</span>
                   <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(currentData[4])} />
                 </div>
               </div>
@@ -186,7 +196,9 @@ export default function LikeMoment() {
                     <div className={styles.rankItemInner}>
                       <img src={likedIds.has(item.id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                       <img src={item.thumbnail} alt="缩略图" className={styles.thumbnail} />
-                      <span className={styles.badgeNum}>{item.rank}</span>
+                      <span className={styles.userName}>{item.userName}</span>
+                      <span className={styles.teamName}>{item.teamName}</span>
+                      <span className={styles.badgeNum}>{item.voteCount}</span>
                       <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(item)} />
                     </div>
                   </div>
@@ -195,7 +207,9 @@ export default function LikeMoment() {
                       <div className={styles.rankItemInner}>
                         <img src={likedIds.has(nextItem.id) ? badgeBaseLiked : badgeBase} alt="徽章" className={styles.badgeBase} />
                         <img src={nextItem.thumbnail} alt="缩略图" className={styles.thumbnail} />
-                        <span className={styles.badgeNum}>{nextItem.rank}</span>
+                        <span className={styles.userName}>{nextItem.userName}</span>
+                        <span className={styles.teamName}>{nextItem.teamName}</span>
+                        <span className={styles.badgeNum}>{nextItem.voteCount}</span>
                         <div className={styles.badgeClickArea} onClick={() => handleBadgeClick(nextItem)} />
                       </div>
                     </div>

@@ -65,7 +65,7 @@
 .rankFirstInner .rankBadge {
   position: absolute;
   top: -2px;
-  left: 50%;
+  left: 51%;
   transform: translateX(-50%);
   width: 25%;
   z-index: 10;
@@ -105,8 +105,8 @@
 /* 排名徽章 - 绝对定位在徽章底板上方 */
 .rankItemInner .rankBadge {
   position: absolute;
-  top: -5%;
-  left: 50%;
+  top: -3%;
+  left: 51%;
   transform: translateX(-50%);
   width: 30%;
   z-index: 10;
@@ -129,11 +129,11 @@
 /* 缩略图层 - 叠加在徽章底板上 */
 .rankFirstInner .thumbnail {
   position: absolute;
-  top: 7%;
-  left: 51%;
+  top: 8%;
+  left: 50.6%;
   transform: translateX(-50%);
-  width: 46%;
-  height: 46%;
+  width: 42.5%;
+  height: 42.5%;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -147,6 +147,57 @@
   height: 44%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+/* 用户名和队伍名 */
+.rankFirstInner .userName {
+  position: absolute;
+  top: 52%;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 46%;
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.rankFirstInner .teamName {
+  position: absolute;
+  top: 62%;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 46%;
+  text-align: center;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.rankItemInner .userName {
+  position: absolute;
+  top: 53%;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 44%;
+  text-align: center;
+  color: #333;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rankItemInner .teamName {
+  position: absolute;
+  top: 62%;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 44%;
+  text-align: center;
+  color: #333;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 徽章上的数字 */
