@@ -78,8 +78,10 @@ export default function LikeMoment() {
   // 当前显示的数据
   const currentData = dataList;
 
-  // 徽章数字点击事件 - 在这里写你的逻辑
+  // 徽章数字点击事件
   const handleBadgeClick = async (item) => {
+    const isLiked = likedIds.has(item.id);
+
     // 本地立即切换状态
     setLikedIds(prev => {
       const newSet = new Set(prev);
@@ -92,7 +94,7 @@ export default function LikeMoment() {
     });
 
     try {
-      await toggleLikeMoment(item.id);
+      await toggleLikeMoment(item.id, isLiked);
       // 重新加载数据（真实接口返回最新状态）
       loadData(1, true);
     } catch (err) {

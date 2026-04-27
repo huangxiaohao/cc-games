@@ -115,14 +115,22 @@ export async function getLikeMomentList({ page = 1, pageSize = 5 } = {}) {
   }));
 }
 
-// 点赞/取消点赞
-export async function toggleLikeMoment(id) {
+// 点赞/取消点赞（根据 liked 状态区分是点赞还是取消点赞）
+export async function toggleLikeMoment(submissionId, isLiked) {
   if (USE_MOCK) {
     await new Promise((r) => setTimeout(r, 200));
-    return { success: true };
+    return { success: true, liked: !isLiked };
   }
-  return request(`/like-moment/like`, {
+  if (isLiked) {
+    // 已点赞 → 取消点赞
+    return request(`/ai-voice/votes`, {
+      method: 'DELETE',
+      body: JSON.stringify({ submissionId }),
+    });
+  }
+  // 未点赞 → 点赞
+  return request(`/ai-voice/votes`, {
     method: 'POST',
-    body: JSON.stringify({ id }),
+    body: JSON.stringify({ submissionId }),
   });
 }
