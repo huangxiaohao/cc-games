@@ -18,6 +18,7 @@ import Toupiao from './pages/joyJourney/toupiao';
 import Template from './pages/Template';
 import VideoSplash from './pages/VideoSplash';
 import GifSplash from "./pages/GifSplash";
+import Admin from './pages/admin';
 
 function AppRoutes() {
   const { login } = useDingtalkLogin();
@@ -71,6 +72,8 @@ function AppRoutes() {
       <Route path="/joy-journey/baoming" element={<Baoming />} />
       {/* 乐启新程 - 投票 */}
       <Route path="/joy-journey/toupiao" element={<Toupiao />} />
+      {/* 管理后台 - 独立访问，不经过钉钉登录 */}
+      <Route path="/admin/*" element={<Admin />} />
     </Routes>
   );
 }
