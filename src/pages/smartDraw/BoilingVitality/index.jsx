@@ -16,7 +16,7 @@ export default function BoilingVitality() {
 
   return (
     <div className={styles.page}>
-      <BackButton top={1} left={5} width={15} height={5} unit="%" />
+      <BackButton top={1} left={5} width={13} height={5} unit="%" />
       <div className={styles.imgWrapper}>
         <img src={bgBoilingVitality} alt="让活力沸腾" className={styles.img} />
         <img src={gifBoilingVitality} alt="" className={styles.gif} />

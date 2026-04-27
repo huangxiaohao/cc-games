@@ -117,7 +117,7 @@ export default function LikeMoment() {
       <div className={styles.imgWrapper}>
         <img src={bg} alt="背景" className={styles.img} />
 
-        <BackButton top={1} left={5} width={15} height={6} unit="%" showImg={true} />
+        <BackButton top={1} left={5} width={13} height={6} unit="%" showImg={true} />
 
         <img src={titleImg} alt="标题" className={styles.title} />
 

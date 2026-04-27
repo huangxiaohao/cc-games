@@ -15,7 +15,7 @@ export default function WarmService() {
 
   return (
     <div className={styles.page}>
-      <BackButton top={1} left={5} width={15} height={5} unit="%" />
+      <BackButton top={1} left={5} width={13} height={5} unit="%" />
       <div className={styles.imgWrapper}>
         <img src={bgWarmService} alt="让服务升温" className={styles.img} />
         <div className={styles.info}>

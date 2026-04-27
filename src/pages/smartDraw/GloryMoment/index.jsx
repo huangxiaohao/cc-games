@@ -8,7 +8,7 @@ export default function GloryMoment() {
   return (
     <div className={styles.page}>
       <img src={bgGloryMoment} alt="荣耀时刻" className={styles.img} />
-      <BackButton top={1} left={5} width={15} height={5} unit="%" />
+      <BackButton top={1} left={5} width={13} height={5} unit="%" />
     </div>
   );
 }
