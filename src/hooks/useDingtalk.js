@@ -21,7 +21,8 @@ export function useDingtalkLogin() {
     return new Promise((resolve, reject) => {
       dd.ready(() => {
         dd.runtime.permission.requestAuthCode({
-          corpId: import.meta.env.VITE_DINGTALK_CORP_ID,
+          // corpId: import.meta.env.VITE_DINGTALK_CORP_ID,
+          corpId: "dingd087435a563ba5b924f2f5cc6abecb85",
           onSuccess: async ({ code }) => {
             try {
               const userInfo = await dingtalkLogin(code);
